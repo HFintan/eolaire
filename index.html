@@ -3,19 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eolaíre | STEM as Gaeilge</title>
+<title>An tEolaíre | STEM as Gaeilge</title>
 <meta name="description" content="Eolaire poiblí de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 <style>
-  /* ===== Dathanna: athraigh iad seo le go mbeidh siad ag teacht le etim.ie ===== */
+  /* ===== Dathanna (ó etim.ie) ===== */
   :root {
-    --cúlra:      #f6f7f5;   /* page background */
-    --cárta:      #ffffff;   /* card background */
-    --téacs:      #1f2a27;   /* main text */
-    --téacs-lag:  #5b6b66;   /* secondary text */
-    --príomh:     #0f6b5c;   /* main colour (header, buttons) */
-    --príomh-lag: #e3f1ed;   /* light tint of main colour (tags) */
-    --imeall:     #dde3e0;   /* borders */
-    --cruinn:     12px;      /* corner rounding */
+    --cúlra:       #ffffff;   /* page background */
+    --cárta:       #ffffff;   /* card background */
+    --téacs:       #1d1d1f;   /* main text */
+    --téacs-lag:   #5f5a5d;   /* secondary text */
+    --craorag:     #a80050;   /* Galway maroon: headings, institutions */
+    --craorag-dorcha: #84003d;/* Galway deep maroon: menu strip */
+    --maigeanta:   #e6007e;   /* Galway magenta: accents */
+    --bándearg:    #fbf4f6;   /* very light pink: panels */
+    --bándearg-2:  #f7e3ec;   /* light pink: tags */
+    --imeall:      #e8dfe3;   /* borders */
+    --nasc:        #e6007e;   /* colour of a name that has a link */
+    --cruinn:      6px;       /* corner rounding */
+    --cló-ceannteidil: "Noto Serif", Georgia, "Times New Roman", serif;
+    --cló:         Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -23,42 +32,70 @@
     margin: 0;
     background: var(--cúlra);
     color: var(--téacs);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.5;
+    font-family: var(--cló);
+    line-height: 1.6;
   }
-  a { color: var(--príomh); }
+  a { color: var(--craorag); }
 
+  /* Ceanntásc, mar atá ar etim.ie */
   header.barr {
-    background: var(--príomh);
-    color: #fff;
-    padding: 2.5rem 1rem 2rem;
+    position: relative; overflow: hidden;
+    background: linear-gradient(100deg, #84003d 0%, #a80050 50%, #e6007e 100%);
+    color: #fff; text-align: center;
+    padding: 3.5rem 1rem 3rem;
   }
-  .lár { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
-  header.barr .lár { padding: 0; }
-  .ar-ais { color: #fff; opacity: .85; font-size: .9rem; text-decoration: none; }
-  .ar-ais:hover { opacity: 1; text-decoration: underline; }
-  header.barr h1 { margin: .5rem 0 .25rem; font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: .01em; }
-  header.barr p { margin: 0 0 1.25rem; max-width: 46rem; opacity: .95; }
+  header.barr::before, header.barr::after {        /* na ciorcail mhaisiúla */
+    content: ""; position: absolute; border-radius: 50%; pointer-events: none;
+    border: 60px solid rgba(255,255,255,.06);
+  }
+  header.barr::before { width: 520px; height: 520px; right: -140px; top: -230px; }
+  header.barr::after  { width: 360px; height: 360px; right: -60px;  top: -150px; border-width: 40px; border-color: rgba(255,255,255,.05); }
+  header.barr .lár { position: relative; }
+  header.barr h1 {
+    font-family: var(--cló-ceannteidil); font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 0 0 .5rem; line-height: 1.1;
+  }
+  header.barr h1 em { font-style: italic; color: #f6c9dd; }
+  header.barr p { margin: 0 auto 1.5rem; max-width: 34rem; color: #f9dbe8; }
   .cnaipe-claraigh {
-    display: inline-block; background: #fff; color: var(--príomh);
-    font-weight: 600; padding: .6rem 1.1rem; border-radius: 999px; text-decoration: none;
+    display: inline-block; background: #fff; color: var(--craorag);
+    font-weight: 600; padding: .6rem 1.3rem; border-radius: 999px; text-decoration: none;
   }
-  .cnaipe-claraigh:hover { box-shadow: 0 0 0 3px rgba(255,255,255,.35); }
+  .cnaipe-claraigh:hover { box-shadow: 0 0 0 4px rgba(255,255,255,.3); }
 
-  main { padding: 2rem 0 3rem; }
-  section.liosta h2 { font-size: 1.4rem; margin: 0 0 .25rem; }
-  section.liosta .fo-theideal { color: var(--téacs-lag); margin: 0 0 1.25rem; font-size: .95rem; }
+  nav.roghchlar {
+    background: var(--craorag-dorcha); text-align: center;
+    padding: .85rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,.12);
+  }
+  nav.roghchlar a {
+    color: #fff; text-decoration: none; text-transform: uppercase;
+    font-size: .85rem; font-weight: 500; letter-spacing: .06em; margin: 0 1rem;
+  }
+  nav.roghchlar a:hover { text-decoration: underline; }
+
+  .lár { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+
+  main { padding: 3rem 0 3rem; }
+  section.liosta h2 {
+    font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--craorag);
+    font-size: clamp(1.5rem, 3.5vw, 2rem); line-height: 1.25; margin: 0 0 .6rem;
+  }
+  section.liosta h2::after {                           /* an líne bhándearg faoin gceannteideal */
+    content: ""; display: block; width: 48px; height: 3px; background: var(--maigeanta); margin-top: .6rem;
+  }
+  section.liosta .fo-theideal { color: var(--téacs-lag); margin: 0 0 1.5rem; font-size: .95rem; }
 
   /* Scagairí */
   .scagairi {
-    background: var(--cárta); border: 1px solid var(--imeall); border-radius: var(--cruinn);
-    padding: 1rem; margin-bottom: 1.25rem;
+    background: var(--bándearg); border-left: 3px solid var(--craorag); border-radius: var(--cruinn);
+    padding: 1rem 1.1rem; margin-bottom: 1.5rem;
   }
   .scagairi .ro { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
   .scagairi input[type=search], .scagairi select {
     font: inherit; padding: .5rem .75rem; border: 1px solid var(--imeall);
-    border-radius: 8px; background: #fff; color: var(--téacs);
+    border-radius: var(--cruinn); background: #fff; color: var(--téacs);
   }
+  .scagairi input[type=search]:focus, .scagairi select:focus { outline: 2px solid var(--maigeanta); outline-offset: 1px; }
   .scagairi input[type=search] { flex: 1 1 16rem; min-width: 0; }
   .scagairi select { flex: 0 1 18rem; min-width: 0; }
   .deilbhini { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .85rem; }
@@ -67,35 +104,46 @@
     border: 1px solid var(--imeall); background: #fff; color: var(--téacs);
     border-radius: 999px; padding: .3rem .7rem; cursor: pointer;
   }
-  .deilbhin-cnaipe[aria-pressed="true"] { background: var(--príomh); border-color: var(--príomh); color: #fff; }
+  .deilbhin-cnaipe:hover { border-color: var(--craorag); }
+  .deilbhin-cnaipe[aria-pressed="true"] { background: var(--craorag); border-color: var(--craorag); color: #fff; }
   .deilbhin-cnaipe .emoji { font-size: 1.05rem; line-height: 1; }
   .faoi-bhun { display: flex; justify-content: space-between; align-items: center; margin-top: .85rem; font-size: .9rem; color: var(--téacs-lag); gap: 1rem; flex-wrap: wrap; }
-  .glan { font: inherit; font-size: .9rem; background: none; border: 0; color: var(--príomh); cursor: pointer; padding: 0; text-decoration: underline; }
+  .glan { font: inherit; font-size: .9rem; background: none; border: 0; color: var(--craorag); cursor: pointer; padding: 0; text-decoration: underline; }
 
   /* Cártaí */
   .eangach { display: flex; flex-direction: column; gap: .85rem; }
   .carta {
     background: var(--cárta); border: 1px solid var(--imeall); border-radius: var(--cruinn);
-    padding: 1.1rem 1.25rem; display: grid; grid-template-columns: 1fr; gap: .55rem 2rem;
+    padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .5rem;
   }
-  .carta .taobh-cle, .carta .taobh-deas { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
-  .carta .taobh-cle { gap: .2rem; }
-  .carta .taobh-cle .spéiseanna, .carta .taobh-cle .riomhphost { margin-top: .4rem; }
-  @media (min-width: 760px) {
-    .carta { grid-template-columns: 17rem 1fr; }
-  }
-  .carta h3 { margin: 0; font-size: 1.15rem; }
-  .carta .rol { margin: 0; color: var(--téacs-lag); font-size: .95rem; }
+  .carta .ceann { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem 1.5rem; flex-wrap: wrap; }
+  .carta .ceann > div { min-width: 0; }
+  .carta h3 { margin: 0; font-family: var(--cló-ceannteidil); font-weight: 600; font-size: 1.2rem; line-height: 1.3; }
+  .carta .rol { margin: .15rem 0 0; font-size: 1rem; color: var(--téacs); }
+  .carta .rol .inst { font-weight: 600; color: var(--craorag); }
   .clibeanna { display: flex; flex-wrap: wrap; gap: .3rem; }
-  .clib { background: var(--príomh-lag); color: var(--príomh); font-size: .78rem; padding: .15rem .55rem; border-radius: 999px; }
-  .spéiseanna { display: flex; flex-wrap: wrap; gap: .25rem; font-size: 1.25rem; line-height: 1; }
+  .clib { background: var(--bándearg-2); color: var(--craorag); font-size: .78rem; padding: .15rem .6rem; border-radius: 999px; }
+  .spéiseanna { display: flex; flex-wrap: wrap; gap: .3rem; font-size: 1.3rem; line-height: 1; }
   .spéiseanna span { cursor: help; }
-  .giota { margin: 0; font-size: .95rem; white-space: pre-line;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .giota.oscailte { -webkit-line-clamp: unset; display: block; }
-  .tuilleadh { font: inherit; font-size: .85rem; align-self: flex-start; background: none; border: 0; padding: 0; color: var(--príomh); cursor: pointer; text-decoration: underline; }
-  .riomhphost { font-size: .85rem; color: var(--téacs-lag); word-break: break-all; margin: 0; }
+  .giota { margin: 0; font-size: .92rem; color: var(--téacs-lag); white-space: pre-line; }
+  .nasc-ainm { color: var(--nasc); text-decoration: none; }
+  .nasc-ainm:hover, .nasc-ainm:focus-visible { text-decoration: underline; }
+  .riomhphost { font-size: .85rem; color: var(--téacs-lag); overflow-wrap: anywhere; margin: 0; }
   .folamh { text-align: center; color: var(--téacs-lag); padding: 2rem 1rem; }
+
+  /* Fáilte agus eochair */
+  .failte { margin: 0 0 2rem; max-width: 52rem; }
+  .failte p { margin: 0 0 .75rem; }
+  .failte .en { color: var(--téacs-lag); font-size: .95rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--imeall); }
+  .eochair { border: 1px solid var(--imeall); border-radius: var(--cruinn); padding: .9rem 1.2rem; margin: 0 0 2.5rem; }
+  .eochair summary { cursor: pointer; font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--craorag); font-size: 1.1rem; }
+  .eochair summary .béarla { font-family: var(--cló); font-weight: 400; font-size: .9rem; color: var(--téacs-lag); }
+  #eochair-liosta { list-style: none; padding: 0; margin: 1rem 0 .25rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: .9rem 2rem; }
+  #eochair-liosta li { display: grid; grid-template-columns: 2rem 1fr; gap: .1rem .6rem; align-items: start; align-content: start; }
+  #eochair-liosta .emoji { font-size: 1.4rem; line-height: 1.3; grid-row: span 3; }
+  #eochair-liosta strong { font-weight: 600; }
+  #eochair-liosta .cur { font-size: .9rem; }
+  #eochair-liosta .curEn { font-size: .85rem; color: var(--téacs-lag); }
 
   footer { border-top: 1px solid var(--imeall); padding: 1.5rem 0 2.5rem; font-size: .9rem; color: var(--téacs-lag); }
   footer p { margin: .25rem 0; }
@@ -105,15 +153,34 @@
 
 <header class="barr">
   <div class="lár">
-    <a class="ar-ais" href="https://etim.ie">← etim.ie</a>
-    <h1>Eolaíre</h1>
+    <h1>An tEolaíre</h1>
     <p>Eolaire poiblí de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
     <a class="cnaipe-claraigh" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh san Eolaíre</a>
   </div>
 </header>
+<nav class="roghchlar">
+  <a href="https://etim.ie">STEM as Gaeilge</a>
+  <a href="https://etim.ie/etimiri">ETIMirí</a>
+</nav>
 
 <main>
   <div class="lár">
+
+    <section class="failte" aria-label="Fáilte">
+      <div class="ga">
+        <p>Fáilte chuig an Eolaíre! Is liosta é seo de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM: léachtóirí, taighdeoirí, mic léinn, agus daoine atá ag obair ar fud na hearnála. Is é an aidhm atá leis daoine a thabhairt le chéile, agus a dhéanamh níos éasca teacht ar chainteoirí, ar chomhoibrithe agus ar oibrithe deonacha d'imeachtaí STEM trí Ghaeilge.</p>
+        <p>Úsáid an cuardach agus na scagairí thíos chun daoine a aimsiú de réir réimse nó spéise. Mura bhfuil seoladh ríomhphoist ar taispeáint do dhuine, seol ríomhphost chugainn agus cuirfimid do theachtaireacht ar aghaidh. Tá fáilte roimh chách clárú, is cuma cén leibhéal Gaeilge atá agat.</p>
+      </div>
+      <div class="en">
+        <p>Welcome to the Eolaíre! This is a list of people with an interest in Irish and in STEM: lecturers, researchers, students, and people working across the sector. Its aim is to bring people together, and to make it easier to find speakers, collaborators and volunteers for STEM events through Irish.</p>
+        <p>Use the search and filters below to find people by field or interest. If someone's email isn't shown, email us and we'll pass your message on. Everyone is welcome to sign up, whatever their level of Irish.</p>
+      </div>
+    </section>
+
+    <details class="eochair" open>
+      <summary>Eochair na ndeilbhíní <span class="béarla">[Icon key]</span></summary>
+      <ul id="eochair-liosta"></ul>
+    </details>
 
     <section class="liosta" id="leachtoiri">
       <h2>Léachtóirí, taighdeoirí agus foireann tríú leibhéal eile</h2>
@@ -143,7 +210,7 @@
 
 <footer>
   <div class="lár">
-    <p><a href="#">Fógra príobháideachais</a></p>
+    <p><a href="priobhaideacht.html">Fógra príobháideachais [Privacy notice]</a></p>
     <p>Chun do shonraí a athrú nó a bhaint: <span>[seoladh ríomhphoist]</span></p>
   </div>
 </footer>
@@ -155,10 +222,10 @@
    (File → Share → Publish to web → CSV) anseo. Go dtí sin, úsáidtear
    na samplaí thíos.
    ===================================================================== */
-const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJASW5ShI5rA4FOfYDBCliRjjwAPWXQWCBD0dUEEs2gFfn12CAmafM9gRYc1fuDi_PpWh63shdd0sd/pub?gid=396348769&single=true&output=csv";
+const CSV_URL = "";
 
 /* Na colúin a bheidh sa bhileog phoiblí (ró ceannteidil):
-   ainm, institiuid, rol, reimsi, giota, speiseanna, teagasc, riomhphost */
+   ainm, institiuid, rol, reimsi, giota, speiseanna, teagasc, riomhphost, nasc (roghnach) */
 
 const SAMPLAI = [
   {
@@ -169,7 +236,8 @@ const SAMPLAI = [
     giota: "Is fisiceoir mé a oibríonn ar réaltaí neodrón agus ar thonnta imtharraingthe. Tógadh le Gaeilge mé i gConamara, agus is breá liom labhairt le daltaí scoile faoin spás. Bím ag múineadh modúil réalteolaíochta trí Ghaeilge le cúpla bliain anuas, agus ba bhreá liom níos mó acmhainní a fheiceáil sa réimse.",
     speiseanna: "Cainteanna neamhfhoirmeálta a thabhairt (ceardlann, Oíche Ólaíochta, cuairt scoile, léacht le linn lóin)., Agallaimh a dhéanamh leis na meáin (raidió, teilifís, podchraoltaí)., Comhoibriú ar thaighde nó ar thionscadail trí Ghaeilge.",
     teagasc: "Déanaim é sin cheana.",
-    riomhphost: "aine.niflatharta@example.ie"
+    riomhphost: "aine.niflatharta@example.ie",
+    nasc: "https://example.ie/aine"
   },
   {
     ainm: "Cathal Mac Giolla Phádraig",
@@ -207,17 +275,17 @@ const REIMSI = [
 
 /* Deilbhíní: aimsítear gach ceann trí phíosa téacs ón rogha san fhoirm */
 const DEILBHINI = [
-  { id: "cainteanna",  emoji: "💬", lipéad: "Cainteanna neamhfhoirmeálta",  béarla: "Informal talks",            meaitseail: ["Cainteanna neamhfhoirm"] },
-  { id: "seimineair",  emoji: "🎤", lipéad: "Seimineáir nó painéil",          béarla: "Seminars or panels",        meaitseail: ["Seimineáir"] },
-  { id: "meain",       emoji: "📻", lipéad: "Na meáin",                       béarla: "Media",                     meaitseail: ["Agallaimh"] },
-  { id: "acmhainni",   emoji: "✏️", lipéad: "Acmhainní",                      béarla: "Resources",                 meaitseail: ["Acmhainní"] },
-  { id: "deonach",     emoji: "🙋", lipéad: "Obair dheonach",                 béarla: "Volunteering",              meaitseail: ["Obair dheonach"] },
-  { id: "eagru",       emoji: "📋", lipéad: "Imeachtaí a eagrú",              béarla: "Organising events",         meaitseail: ["Imeachtaí a eagrú"] },
-  { id: "taighde",     emoji: "🧪", lipéad: "Staidéir taighde",               béarla: "Research studies",          meaitseail: ["staidéar taighde", "staidéir taighde"] },
-  { id: "cuairteanna", emoji: "🏢", lipéad: "Cuairteanna ar shaotharlann",    béarla: "Lab visits",                meaitseail: ["Cuairteanna ar"] },
-  { id: "comhoibriu",  emoji: "🤝", lipéad: "Comhoibriú",                     béarla: "Collaboration",             meaitseail: ["Comhoibriú"] },
-  { id: "foghlaim",    emoji: "🌱", lipéad: "Imeachtaí d'fhoghlaimeoirí",     béarla: "Learners' events",          meaitseail: ["fhoghlaimeoirí"] },
-  { id: "teagasc",     emoji: "🎓", lipéad: "Teagasc trí Ghaeilge",           béarla: "Teaching through Irish",    meaitseail: [] }
+  { id: "cainteanna",  emoji: "💬", lipéad: "Cainteanna neamhfhoirmeálta",  béarla: "Informal talks",            cur: "Sásta cainteanna neamhfhoirmeálta nó ceardlanna a thabhairt, m.sh. ag Pint of Science, ar chuairteanna scoile nó ag léachtaí am lóin.", curEn: "Happy to give informal talks or workshops, e.g. at Pint of Science, on school visits or at lunchtime talks.", meaitseail: ["Cainteanna neamhfhoirm"] },
+  { id: "seimineair",  emoji: "🎤", lipéad: "Seimineáir nó painéil",          béarla: "Seminars or panels",        cur: "Sásta seimineár a thabhairt nó páirt a ghlacadh i bpléphainéal.", curEn: "Happy to give a seminar or take part in a panel discussion.", meaitseail: ["Seimineáir"] },
+  { id: "meain",       emoji: "📻", lipéad: "Na meáin",                       béarla: "Media",                     cur: "Sásta agallaimh a dhéanamh leis na meáin: raidió, teilifís nó podchraoltaí.", curEn: "Happy to do media interviews: radio, TV or podcasts.", meaitseail: ["Agallaimh"] },
+  { id: "acmhainni",   emoji: "✏️", lipéad: "Acmhainní",                      béarla: "Resources",                 cur: "Sásta acmhainní a chruthú nó a athbhreithniú, m.sh. físeáin, ailt nó téarmaíocht.", curEn: "Happy to create or review resources, e.g. videos, articles or terminology.", meaitseail: ["Acmhainní"] },
+  { id: "deonach",     emoji: "🙋", lipéad: "Obair dheonach",                 béarla: "Volunteering",              cur: "Sásta cabhrú mar oibrí deonach ag imeachtaí ar an lá.", curEn: "Happy to volunteer at events on the day.", meaitseail: ["Obair dheonach"] },
+  { id: "eagru",       emoji: "📋", lipéad: "Imeachtaí a eagrú",              béarla: "Organising events",         cur: "Sásta imeachtaí a eagrú nó a chomheagrú.", curEn: "Happy to organise or co-organise events.", meaitseail: ["Imeachtaí a eagrú"] },
+  { id: "taighde",     emoji: "🧪", lipéad: "Staidéir taighde",               béarla: "Research studies",          cur: "Sásta páirt a ghlacadh i staidéir taighde: suirbhéanna, turgnaimh nó taifeadtaí gutha.", curEn: "Happy to take part in research studies: surveys, experiments or voice recordings.", meaitseail: ["staidéar taighde", "staidéir taighde"] },
+  { id: "cuairteanna", emoji: "🏢", lipéad: "Cuairteanna ar shaotharlann",    béarla: "Lab visits",                cur: "Sásta cuairteanna ar shaotharlann nó ar ghrúpa taighde a óstáil.", curEn: "Happy to host visits to their lab or research group.", meaitseail: ["Cuairteanna ar"] },
+  { id: "comhoibriu",  emoji: "🤝", lipéad: "Comhoibriú",                     béarla: "Collaboration",             cur: "Oscailte do chomhoibriú ar thaighde nó ar thionscadail trí Ghaeilge.", curEn: "Open to collaborating on research or projects through Irish.", meaitseail: ["Comhoibriú"] },
+  { id: "foghlaim",    emoji: "🌱", lipéad: "Imeachtaí d'fhoghlaimeoirí",     béarla: "Learners' events",          cur: "Spéis acu in imeachtaí d'fhoghlaimeoirí, m.sh. seisiúin téarmaíochta nó ciorcail chomhrá.", curEn: "Interested in events for learners, e.g. terminology sessions or conversation groups.", meaitseail: ["fhoghlaimeoirí"] },
+  { id: "teagasc",     emoji: "🎓", lipéad: "Teagasc trí Ghaeilge",           béarla: "Teaching through Irish",    cur: "Ag teagasc nó ag déanamh maoirseachta trí Ghaeilge cheana, nó sásta é sin a dhéanamh le tacaíocht.", curEn: "Already teaching or supervising through Irish, or willing to with support.", meaitseail: [] }
 ];
 
 /* ===================================================================== */
@@ -243,7 +311,8 @@ function parsáilCSV(téacs) {
     } else { réimse += c; }
   }
   if (réimse !== "" || ró.length) { ró.push(réimse); rónna.push(ró); }
-  const ceann = (rónna.shift() || []).map(h => h.trim().toLowerCase());
+  /* Ceannteidil: bain BOM, spásanna, fadas agus ceannlitreacha, le go n-oibreoidh "Institiúid" chomh maith le "institiuid" */
+  const ceann = (rónna.shift() || []).map(h => normalú(h.replace(/^﻿/, "")).replace(/[^a-z]/g, ""));
   return rónna
     .filter(r => r.some(x => x.trim() !== ""))
     .map(r => Object.fromEntries(ceann.map((h, i) => [h, (r[i] || "").trim()])));
@@ -283,14 +352,27 @@ function el(clib, airíonna = {}, téacs) {
 
 function cartaDuine(d) {
   const c = el("article", { class: "carta" });
-  const cle = el("div", { class: "taobh-cle" });
-  const deas = el("div", { class: "taobh-deas" });
-  c.append(cle, deas);
 
-  /* Taobh clé: ainm, ról, institiúid, deilbhíní, ríomhphost */
-  cle.append(el("h3", {}, d.ainm));
-  if (d.rol) cle.append(el("p", { class: "rol" }, d.rol));
-  if (d.institiuid) cle.append(el("p", { class: "rol" }, d.institiuid));
+  /* Ceann: ainm, ról · institiúid ar chlé; deilbhíní ar dheis */
+  const ceann = el("div", { class: "ceann" });
+  const aitheantas = el("div");
+  /* Ainm: is nasc é más ann do nasc bailí (https:// nó http:// amháin) */
+  const h3 = el("h3");
+  if (d.nasc && /^https?:\/\/[^\s]+$/i.test(d.nasc)) {
+    const a = el("a", { href: d.nasc, target: "_blank", rel: "noopener noreferrer nofollow", class: "nasc-ainm" }, d.ainm);
+    h3.append(a);
+  } else {
+    h3.textContent = d.ainm;
+  }
+  aitheantas.append(h3);
+  if (d.rol || d.institiuid) {
+    const p = el("p", { class: "rol" });
+    if (d.rol) p.append(document.createTextNode(d.rol));
+    if (d.rol && d.institiuid) p.append(document.createTextNode(" · "));
+    if (d.institiuid) p.append(el("span", { class: "inst" }, d.institiuid));
+    aitheantas.append(p);
+  }
+  ceann.append(aitheantas);
 
   if (d.deilbhini.length) {
     const sp = el("div", { class: "spéiseanna" });
@@ -298,30 +380,31 @@ function cartaDuine(d) {
       const x = DEILBHINI.find(y => y.id === id);
       sp.append(el("span", { title: `${x.lipéad} [${x.béarla}]`, "aria-label": x.lipéad, role: "img" }, x.emoji));
     });
-    cle.append(sp);
+    ceann.append(sp);
   }
+  c.append(ceann);
 
-  if (d.riomhphost && d.riomhphost.includes("@")) {
-    cle.append(el("p", { class: "riomhphost" }, "✉ " + cumhdaighRiomhphost(d.riomhphost)));
-  }
-
-  /* Taobh deas: réimsí agus giota fúthu féin */
+  /* Réimsí */
   if (d.reimsi.length) {
     const cl = el("div", { class: "clibeanna" });
     d.reimsi.forEach(r => cl.append(el("span", { class: "clib" }, r)));
-    deas.append(cl);
+    c.append(cl);
   }
 
+  /* Giota fúthu féin: taispeántar ina iomlán é */
   if (d.giota) {
     const g = el("p", { class: "giota" }, d.giota);
-    deas.append(g);
-    const b = el("button", { type: "button", class: "tuilleadh", hidden: "" }, "Tuilleadh ▾");
-    b.addEventListener("click", () => {
-      const oscailte = g.classList.toggle("oscailte");
-      b.textContent = oscailte ? "Níos lú ▴" : "Tuilleadh ▾";
+    c.append(g);
+  }
+
+  /* Ríomhphost: briseann sé ag [ponc] agus [ag] amháin, ní i lár focail */
+  if (d.riomhphost && d.riomhphost.includes("@")) {
+    const r = el("p", { class: "riomhphost" }, "✉ ");
+    cumhdaighRiomhphost(d.riomhphost).split(/(?=\[ponc\]|\[ag\])/).forEach((píosa, i) => {
+      if (i) r.append(document.createElement("wbr"));
+      r.append(document.createTextNode(píosa));
     });
-    deas.append(b);
-    requestAnimationFrame(() => { if (g.scrollHeight > g.clientHeight + 2) b.hidden = false; });
+    c.append(r);
   }
   return c;
 }
@@ -368,14 +451,33 @@ function tógScagairí() {
   });
 }
 
+function tógEochair() {
+  const ul = document.getElementById("eochair-liosta");
+  DEILBHINI.forEach(x => {
+    const li = el("li");
+    li.append(el("span", { class: "emoji", "aria-hidden": "true" }, x.emoji),
+              el("strong", {}, x.lipéad + " "),
+              el("span", { class: "cur" }, x.cur),
+              el("span", { class: "curEn" }, x.curEn));
+    ul.append(li);
+  });
+}
+
 async function tosaigh() {
+  tógEochair();
   tógScagairí();
   let amh = SAMPLAI;
   if (CSV_URL) {
     try {
       const freagra = await fetch(CSV_URL, { cache: "no-store" });
-      amh = parsáilCSV(await freagra.text());
+      if (!freagra.ok) throw new Error("HTTP " + freagra.status);
+      const téacs = await freagra.text();
+      amh = parsáilCSV(téacs);
+      if (!amh.length || !("ainm" in amh[0])) {
+        console.warn("Eolaíre: níor aimsíodh colún 'ainm'. Tús an CSV:", téacs.slice(0, 300));
+      }
     } catch (e) {
+      console.error("Eolaíre:", e);
       eangach.append(el("p", { class: "folamh" }, "Níorbh fhéidir an t-eolas a lódáil. Bain triail eile as ar ball."));
       return;
     }
