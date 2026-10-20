@@ -222,10 +222,10 @@
    (File → Share → Publish to web → CSV) anseo. Go dtí sin, úsáidtear
    na samplaí thíos.
    ===================================================================== */
-const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXIMr-ArARb3GyDxljjQTSY0b4ah3QCEpbiY_v5qpzGPB5S1pp0Lzbb0BbtakhhFVUoNsk9UqNnxri/pub?gid=0&single=true&output=csv";
+const CSV_URL = "";
 
 /* Na colúin a bheidh sa bhileog phoiblí (ró ceannteidil):
-   ainm, institiuid, rol, reimsi, giota, speiseanna, teagasc, riomhphost, nasc (roghnach) */
+   ainm, institiuid, rol, reimsi, giota, speiseanna, teagasc, maoirseacht, riomhphost, nasc */
 
 const SAMPLAI = [
   {
@@ -323,7 +323,7 @@ function ullmhaigh(d) {
   const reimsi = REIMSI.filter(r => (d.reimsi || "").includes(r));
   const deilbhini = DEILBHINI.filter(x =>
     x.id === "teagasc"
-      ? /Bheinn|Déanaim/.test(d.teagasc || "")
+      ? (/Bheinn|B['’]fhéidir|Déanaim/.test(d.teagasc || "") || (d.maoirseacht || "").trim() !== "")
       : x.meaitseail.some(m => (d.speiseanna || "").includes(m))
   ).map(x => x.id);
   const cuardach = normalú([d.ainm, d.institiuid, d.rol, d.giota, reimsi.join(" ")].join(" "));
@@ -358,8 +358,11 @@ function cartaDuine(d) {
   const aitheantas = el("div");
   /* Ainm: is nasc é más ann do nasc bailí (https:// nó http:// amháin) */
   const h3 = el("h3");
-  if (d.nasc && /^https?:\/\/[^\s]+$/i.test(d.nasc)) {
-    const a = el("a", { href: d.nasc, target: "_blank", rel: "noopener noreferrer nofollow", class: "nasc-ainm" }, d.ainm);
+  /* Cuir https:// leis má d'fhág an duine ar lár é (m.sh. "www.example.ie") */
+  let nasc = (d.nasc || "").trim();
+  if (nasc && !/^[a-z]+:/i.test(nasc) && /^[^\s\/]+\.[^\s]+$/.test(nasc)) nasc = "https://" + nasc;
+  if (nasc && /^https?:\/\/[^\s]+$/i.test(nasc)) {
+    const a = el("a", { href: nasc, target: "_blank", rel: "noopener noreferrer nofollow", class: "nasc-ainm" }, d.ainm);
     h3.append(a);
   } else {
     h3.textContent = d.ainm;
