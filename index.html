@@ -9,19 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 <style>
-  /* ===== Dathanna (ó etim.ie) ===== */
+  /* ===== Dathanna: athraigh anseo iad ===== */
   :root {
     --cúlra:       #ffffff;   /* page background */
     --cárta:       #ffffff;   /* card background */
     --téacs:       #1d1d1f;   /* main text */
     --téacs-lag:   #5f5a5d;   /* secondary text */
-    --craorag:     #a80050;   /* Galway maroon: headings, institutions */
-    --craorag-dorcha: #84003d;/* Galway deep maroon: menu strip */
-    --maigeanta:   #e6007e;   /* Galway magenta: accents */
-    --bándearg:    #fbf4f6;   /* very light pink: panels */
-    --bándearg-2:  #f7e3ec;   /* light pink: tags */
-    --imeall:      #e8dfe3;   /* borders */
-    --nasc:        #e6007e;   /* colour of a name that has a link */
+    --príomh:     #0f6b5c;   /* main colour: headings, institutions */
+    --príomh-dorcha: #0b4f44;/* dark: menu strip */
+    --béim:   #19a088;   /* accent: heading underlines */
+    --éadrom:    #f1f8f6;   /* very light tint: panels */
+    --éadrom-2:  #e3f1ed;   /* light tint: tags */
+    --imeall:      #dfe7e4;   /* borders */
+    --nasc:        #c2410c;   /* colour of a name that has a link */
     --cruinn:      6px;       /* corner rounding */
     --cló-ceannteidil: "Noto Serif", Georgia, "Times New Roman", serif;
     --cló:         Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -35,12 +35,12 @@
     font-family: var(--cló);
     line-height: 1.6;
   }
-  a { color: var(--craorag); }
+  a { color: var(--príomh); }
 
   /* Ceanntásc, mar atá ar etim.ie */
   header.barr {
     position: relative; overflow: hidden;
-    background: linear-gradient(100deg, #84003d 0%, #a80050 50%, #e6007e 100%);
+    background: linear-gradient(100deg, #0b4f44 0%, #0f6b5c 50%, #19a088 100%);
     color: #fff; text-align: center;
     padding: 3.5rem 1rem 3rem;
   }
@@ -55,16 +55,16 @@
     font-family: var(--cló-ceannteidil); font-weight: 700;
     font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 0 0 .5rem; line-height: 1.1;
   }
-  header.barr h1 em { font-style: italic; color: #f6c9dd; }
-  header.barr p { margin: 0 auto 1.5rem; max-width: 34rem; color: #f9dbe8; }
+  header.barr h1 em { font-style: italic; color: #cdeee6; }
+  header.barr p { margin: 0 auto 1.5rem; max-width: 34rem; color: #dff3ee; }
   .cnaipe-claraigh {
-    display: inline-block; background: #fff; color: var(--craorag);
+    display: inline-block; background: #fff; color: var(--príomh);
     font-weight: 600; padding: .6rem 1.3rem; border-radius: 999px; text-decoration: none;
   }
   .cnaipe-claraigh:hover { box-shadow: 0 0 0 4px rgba(255,255,255,.3); }
 
   nav.roghchlar {
-    background: var(--craorag-dorcha); text-align: center;
+    background: var(--príomh-dorcha); text-align: center;
     padding: .85rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,.12);
   }
   nav.roghchlar a {
@@ -77,17 +77,17 @@
 
   main { padding: 3rem 0 3rem; }
   section.liosta h2 {
-    font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--craorag);
+    font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--príomh);
     font-size: clamp(1.5rem, 3.5vw, 2rem); line-height: 1.25; margin: 0 0 .6rem;
   }
   section.liosta h2::after {                           /* an líne bhándearg faoin gceannteideal */
-    content: ""; display: block; width: 48px; height: 3px; background: var(--maigeanta); margin-top: .6rem;
+    content: ""; display: block; width: 48px; height: 3px; background: var(--béim); margin-top: .6rem;
   }
   section.liosta .fo-theideal { color: var(--téacs-lag); margin: 0 0 1.5rem; font-size: .95rem; }
 
   /* Scagairí */
   .scagairi {
-    background: var(--bándearg); border-left: 3px solid var(--craorag); border-radius: var(--cruinn);
+    background: var(--éadrom); border-left: 3px solid var(--príomh); border-radius: var(--cruinn);
     padding: 1rem 1.1rem; margin-bottom: 1.5rem;
   }
   .scagairi .ro { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
@@ -95,7 +95,7 @@
     font: inherit; padding: .5rem .75rem; border: 1px solid var(--imeall);
     border-radius: var(--cruinn); background: #fff; color: var(--téacs);
   }
-  .scagairi input[type=search]:focus, .scagairi select:focus { outline: 2px solid var(--maigeanta); outline-offset: 1px; }
+  .scagairi input[type=search]:focus, .scagairi select:focus { outline: 2px solid var(--béim); outline-offset: 1px; }
   .scagairi input[type=search] { flex: 1 1 16rem; min-width: 0; }
   .scagairi select { flex: 0 1 18rem; min-width: 0; }
   .deilbhini { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .85rem; }
@@ -104,11 +104,11 @@
     border: 1px solid var(--imeall); background: #fff; color: var(--téacs);
     border-radius: 999px; padding: .3rem .7rem; cursor: pointer;
   }
-  .deilbhin-cnaipe:hover { border-color: var(--craorag); }
-  .deilbhin-cnaipe[aria-pressed="true"] { background: var(--craorag); border-color: var(--craorag); color: #fff; }
+  .deilbhin-cnaipe:hover { border-color: var(--príomh); }
+  .deilbhin-cnaipe[aria-pressed="true"] { background: var(--príomh); border-color: var(--príomh); color: #fff; }
   .deilbhin-cnaipe .emoji { font-size: 1.05rem; line-height: 1; }
   .faoi-bhun { display: flex; justify-content: space-between; align-items: center; margin-top: .85rem; font-size: .9rem; color: var(--téacs-lag); gap: 1rem; flex-wrap: wrap; }
-  .glan { font: inherit; font-size: .9rem; background: none; border: 0; color: var(--craorag); cursor: pointer; padding: 0; text-decoration: underline; }
+  .glan { font: inherit; font-size: .9rem; background: none; border: 0; color: var(--príomh); cursor: pointer; padding: 0; text-decoration: underline; }
 
   /* Cártaí */
   .eangach { display: flex; flex-direction: column; gap: .85rem; }
@@ -120,9 +120,9 @@
   .carta .ceann > div { min-width: 0; }
   .carta h3 { margin: 0; font-family: var(--cló-ceannteidil); font-weight: 600; font-size: 1.2rem; line-height: 1.3; }
   .carta .rol { margin: .15rem 0 0; font-size: 1rem; color: var(--téacs); }
-  .carta .rol .inst { font-weight: 600; color: var(--craorag); }
+  .carta .rol .inst { font-weight: 600; color: var(--príomh); }
   .clibeanna { display: flex; flex-wrap: wrap; gap: .3rem; }
-  .clib { background: var(--bándearg-2); color: var(--craorag); font-size: .78rem; padding: .15rem .6rem; border-radius: 999px; }
+  .clib { background: var(--éadrom-2); color: var(--príomh); font-size: .78rem; padding: .15rem .6rem; border-radius: 999px; }
   .spéiseanna { display: flex; flex-wrap: wrap; gap: .3rem; font-size: 1.3rem; line-height: 1; }
   .spéiseanna span { cursor: help; }
   .giota { margin: 0; font-size: .92rem; color: var(--téacs-lag); white-space: pre-line; }
@@ -136,7 +136,7 @@
   .failte p { margin: 0 0 .75rem; }
   .failte .en { color: var(--téacs-lag); font-size: .95rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--imeall); }
   .eochair { border: 1px solid var(--imeall); border-radius: var(--cruinn); padding: .9rem 1.2rem; margin: 0 0 2.5rem; }
-  .eochair summary { cursor: pointer; font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--craorag); font-size: 1.1rem; }
+  .eochair summary { cursor: pointer; font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--príomh); font-size: 1.1rem; }
   .eochair summary .béarla { font-family: var(--cló); font-weight: 400; font-size: .9rem; color: var(--téacs-lag); }
   #eochair-liosta { list-style: none; padding: 0; margin: 1rem 0 .25rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: .9rem 2rem; }
   #eochair-liosta li { display: grid; grid-template-columns: 2rem 1fr; gap: .1rem .6rem; align-items: start; align-content: start; }
@@ -144,6 +144,18 @@
   #eochair-liosta strong { font-weight: 600; }
   #eochair-liosta .cur { font-size: .9rem; }
   #eochair-liosta .curEn { font-size: .85rem; color: var(--téacs-lag); }
+
+  .failte .en { font-style: italic; }
+  .ranna { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .75rem; margin: 0 0 2rem; }
+  .rann { display: block; text-decoration: none; color: var(--téacs); border: 1px solid var(--imeall); border-top: 3px solid var(--príomh); border-radius: var(--cruinn); padding: .8rem 1rem; }
+  .rann:hover { background: var(--éadrom); }
+  .rann strong { display: block; font-family: var(--cló-ceannteidil); color: var(--príomh); font-size: 1rem; line-height: 1.35; }
+  .rann .béarla { display: block; font-size: .85rem; color: var(--téacs-lag); margin-top: .2rem; }
+  .claraigh-rann { display: inline-block; margin: 0 0 1.25rem; font-weight: 600; }
+  .go-luath { color: var(--téacs-lag); font-style: italic; }
+  section.liosta + section.liosta { margin-top: 3rem; }
+  .eochair .noda { margin: .75rem 0 0; font-size: .9rem; }
+  .eochair .noda .en { color: var(--téacs-lag); font-style: italic; }
 
   footer { border-top: 1px solid var(--imeall); padding: 1.5rem 0 2.5rem; font-size: .9rem; color: var(--téacs-lag); }
   footer p { margin: .25rem 0; }
@@ -155,12 +167,12 @@
   <div class="lár">
     <h1>An tEolaíre</h1>
     <p>Eolaire poiblí de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
-    <a class="cnaipe-claraigh" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh san Eolaíre</a>
   </div>
 </header>
 <nav class="roghchlar">
   <a href="https://etim.ie">STEM as Gaeilge</a>
   <a href="https://etim.ie/etimiri">ETIMirí</a>
+  <a href="https://etim.ie/comortas">Comórtas</a>
 </nav>
 
 <main>
@@ -168,23 +180,40 @@
 
     <section class="failte" aria-label="Fáilte">
       <div class="ga">
-        <p>Fáilte chuig an Eolaíre! Is liosta é seo de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM: léachtóirí, taighdeoirí, mic léinn, agus daoine atá ag obair ar fud na hearnála. Is é an aidhm atá leis daoine a thabhairt le chéile, agus a dhéanamh níos éasca teacht ar chainteoirí, ar chomhoibrithe agus ar oibrithe deonacha d'imeachtaí STEM trí Ghaeilge.</p>
+        <p>Fáilte chuig an Eolaíre! Is liosta é seo de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM.</p>
         <p>Úsáid an cuardach agus na scagairí thíos chun daoine a aimsiú de réir réimse nó spéise. Mura bhfuil seoladh ríomhphoist ar taispeáint do dhuine, seol ríomhphost chugainn agus cuirfimid do theachtaireacht ar aghaidh. Tá fáilte roimh chách clárú, is cuma cén leibhéal Gaeilge atá agat.</p>
       </div>
       <div class="en">
-        <p>Welcome to the Eolaíre! This is a list of people with an interest in Irish and in STEM: lecturers, researchers, students, and people working across the sector. Its aim is to bring people together, and to make it easier to find speakers, collaborators and volunteers for STEM events through Irish.</p>
+        <p>Welcome to the Eolaíre! This is a list of people with an interest in Irish and in STEM.</p>
         <p>Use the search and filters below to find people by field or interest. If someone's email isn't shown, email us and we'll pass your message on. Everyone is welcome to sign up, whatever their level of Irish.</p>
       </div>
     </section>
 
+    <nav class="ranna" aria-label="Na liostaí">
+      <a class="rann" href="#leachtoiri">
+        <strong>Léachtóirí, taighdeoirí agus foireann tríú leibhéal eile</strong>
+        <span class="béarla">Lecturers, researchers and other third-level staff</span>
+      </a>
+      <a class="rann" href="#mic-leinn">
+        <strong>Mic léinn</strong>
+        <span class="béarla">Students</span>
+      </a>
+      <a class="rann" href="#daoine-eile">
+        <strong>Daoine eile</strong>
+        <span class="béarla">Others</span>
+      </a>
+    </nav>
+
     <details class="eochair" open>
       <summary>Eochair na ndeilbhíní <span class="béarla">[Icon key]</span></summary>
+      <p class="noda">Léiríonn na deilbhíní na rudaí a bhfuil spéis ag duine iontu, ní gealltanas. <span class="en">[The icons show what someone is interested in, not a commitment.]</span></p>
       <ul id="eochair-liosta"></ul>
     </details>
 
     <section class="liosta" id="leachtoiri">
       <h2>Léachtóirí, taighdeoirí agus foireann tríú leibhéal eile</h2>
       <p class="fo-theideal">Lecturers, researchers and other third-level staff</p>
+      <a class="claraigh-rann" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh sa liosta seo [Sign up to this list] →</a>
 
       <div class="scagairi">
         <div class="ro">
@@ -203,13 +232,24 @@
       <div class="eangach" id="eangach"></div>
     </section>
 
-    <!-- Rachaidh an dá liosta eile (mic léinn, agus daoine eile) anseo níos déanaí. -->
+    <section class="liosta" id="mic-leinn">
+      <h2>Mic léinn</h2>
+      <p class="fo-theideal">Students (undergraduate and taught master's)</p>
+      <p class="go-luath">Ag teacht go luath. [Coming soon.]</p>
+    </section>
+
+    <section class="liosta" id="daoine-eile">
+      <h2>Daoine eile</h2>
+      <p class="fo-theideal">Others: industry, teachers, public sector, science communication and more</p>
+      <p class="go-luath">Ag teacht go luath. [Coming soon.]</p>
+    </section>
 
   </div>
 </main>
 
 <footer>
   <div class="lár">
+    <p>Coimeádann <span>[D'ainm]</span> an tEolaíre. [Maintained by <span>[Your name]</span>.]</p>
     <p><a href="priobhaideacht.html">Fógra príobháideachais [Privacy notice]</a></p>
     <p>Chun do shonraí a athrú nó a bhaint: <span>[seoladh ríomhphoist]</span></p>
   </div>
@@ -222,7 +262,7 @@
    (File → Share → Publish to web → CSV) anseo. Go dtí sin, úsáidtear
    na samplaí thíos.
    ===================================================================== */
-const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXIMr-ArARb3GyDxljjQTSY0b4ah3QCEpbiY_v5qpzGPB5S1pp0Lzbb0BbtakhhFVUoNsk9UqNnxri/pub?gid=0&single=true&output=csv";
+const CSV_URL = "";
 
 /* Na colúin a bheidh sa bhileog phoiblí (ró ceannteidil):
    ainm, institiuid, rol, reimsi, giota, speiseanna, teagasc, maoirseacht, riomhphost, nasc */
@@ -234,7 +274,7 @@ const SAMPLAI = [
     rol: "Léachtóir le Fisic",
     reimsi: "Fisic, Réalteolaíocht agus Eolaíocht an Spáis",
     giota: "Is fisiceoir mé a oibríonn ar réaltaí neodrón agus ar thonnta imtharraingthe. Tógadh le Gaeilge mé i gConamara, agus is breá liom labhairt le daltaí scoile faoin spás. Bím ag múineadh modúil réalteolaíochta trí Ghaeilge le cúpla bliain anuas, agus ba bhreá liom níos mó acmhainní a fheiceáil sa réimse.",
-    speiseanna: "Cainteanna neamhfhoirmeálta a thabhairt (ceardlann, Oíche Ólaíochta, cuairt scoile, léacht le linn lóin)., Agallaimh a dhéanamh leis na meáin (raidió, teilifís, podchraoltaí)., Comhoibriú ar thaighde nó ar thionscadail trí Ghaeilge.",
+    speiseanna: "Cainteanna neamhfhoirmeálta a thabhairt (ceardlann, Oíche Ólaíochta, cuairt scoile, léacht le linn lóin)., Agallaimh a dhéanamh leis na meáin (raidió, teilifís, podchraoltaí)., Comhoibriú ar thaighde nó ar thionscadail trí Ghaeilge., Oideachas tríú-leibhéal trí mheán na Gaeilge a chur chun cinn.",
     teagasc: "Déanaim é sin cheana.",
     riomhphost: "aine.niflatharta@example.ie",
     nasc: "https://example.ie/aine"
@@ -275,17 +315,18 @@ const REIMSI = [
 
 /* Deilbhíní: aimsítear gach ceann trí phíosa téacs ón rogha san fhoirm */
 const DEILBHINI = [
-  { id: "cainteanna",  emoji: "💬", lipéad: "Cainteanna neamhfhoirmeálta",  béarla: "Informal talks",            cur: "Sásta cainteanna neamhfhoirmeálta nó ceardlanna a thabhairt, m.sh. ag Pint of Science, ar chuairteanna scoile nó ag léachtaí am lóin.", curEn: "Happy to give informal talks or workshops, e.g. at Pint of Science, on school visits or at lunchtime talks.", meaitseail: ["Cainteanna neamhfhoirm"] },
-  { id: "seimineair",  emoji: "🎤", lipéad: "Seimineáir nó painéil",          béarla: "Seminars or panels",        cur: "Sásta seimineár a thabhairt nó páirt a ghlacadh i bpléphainéal.", curEn: "Happy to give a seminar or take part in a panel discussion.", meaitseail: ["Seimineáir"] },
-  { id: "meain",       emoji: "📻", lipéad: "Na meáin",                       béarla: "Media",                     cur: "Sásta agallaimh a dhéanamh leis na meáin: raidió, teilifís nó podchraoltaí.", curEn: "Happy to do media interviews: radio, TV or podcasts.", meaitseail: ["Agallaimh"] },
-  { id: "acmhainni",   emoji: "✏️", lipéad: "Acmhainní",                      béarla: "Resources",                 cur: "Sásta acmhainní a chruthú nó a athbhreithniú, m.sh. físeáin, ailt nó téarmaíocht.", curEn: "Happy to create or review resources, e.g. videos, articles or terminology.", meaitseail: ["Acmhainní"] },
-  { id: "deonach",     emoji: "🙋", lipéad: "Obair dheonach",                 béarla: "Volunteering",              cur: "Sásta cabhrú mar oibrí deonach ag imeachtaí ar an lá.", curEn: "Happy to volunteer at events on the day.", meaitseail: ["Obair dheonach"] },
-  { id: "eagru",       emoji: "📋", lipéad: "Imeachtaí a eagrú",              béarla: "Organising events",         cur: "Sásta imeachtaí a eagrú nó a chomheagrú.", curEn: "Happy to organise or co-organise events.", meaitseail: ["Imeachtaí a eagrú"] },
-  { id: "taighde",     emoji: "🧪", lipéad: "Staidéir taighde",               béarla: "Research studies",          cur: "Sásta páirt a ghlacadh i staidéir taighde: suirbhéanna, turgnaimh nó taifeadtaí gutha.", curEn: "Happy to take part in research studies: surveys, experiments or voice recordings.", meaitseail: ["staidéar taighde", "staidéir taighde"] },
-  { id: "cuairteanna", emoji: "🏢", lipéad: "Cuairteanna ar shaotharlann",    béarla: "Lab visits",                cur: "Sásta cuairteanna ar shaotharlann nó ar ghrúpa taighde a óstáil.", curEn: "Happy to host visits to their lab or research group.", meaitseail: ["Cuairteanna ar"] },
-  { id: "comhoibriu",  emoji: "🤝", lipéad: "Comhoibriú",                     béarla: "Collaboration",             cur: "Oscailte do chomhoibriú ar thaighde nó ar thionscadail trí Ghaeilge.", curEn: "Open to collaborating on research or projects through Irish.", meaitseail: ["Comhoibriú"] },
+  { id: "cainteanna",  emoji: "💬", lipéad: "Cainteanna neamhfhoirmeálta",  béarla: "Informal talks",            cur: "Spéis acu cainteanna neamhfhoirmeálta nó ceardlanna a thabhairt, m.sh. ag Pint of Science, ar chuairteanna scoile nó ag léachtaí le linn lóin.", curEn: "Interested in giving informal talks or workshops, e.g. at Pint of Science, on school visits or at lunchtime talks.", meaitseail: ["Cainteanna neamhfhoirm"] },
+  { id: "seimineair",  emoji: "🎤", lipéad: "Seimineáir nó painéil",          béarla: "Seminars or panels",        cur: "Spéis acu seimineár a thabhairt nó páirt a ghlacadh i bpléphainéal.", curEn: "Interested in giving a seminar or taking part in a panel discussion.", meaitseail: ["Seimineáir"] },
+  { id: "meain",       emoji: "📻", lipéad: "Na meáin",                       béarla: "Media",                     cur: "Spéis acu agallaimh a dhéanamh leis na meáin: raidió, teilifís nó podchraoltaí.", curEn: "Interested in doing media interviews: radio, TV or podcasts.", meaitseail: ["Agallaimh"] },
+  { id: "acmhainni",   emoji: "✏️", lipéad: "Acmhainní",                      béarla: "Resources",                 cur: "Spéis acu acmhainní a chruthú nó a athbhreithniú, m.sh. físeáin, ailt nó téarmaíocht.", curEn: "Interested in creating or reviewing resources, e.g. videos, articles or terminology.", meaitseail: ["Acmhainní"] },
+  { id: "deonach",     emoji: "🙋", lipéad: "Obair dheonach",                 béarla: "Volunteering",              cur: "Spéis acu cabhrú mar oibrithe deonacha ag imeachtaí ar an lá.", curEn: "Interested in volunteering at events on the day.", meaitseail: ["Obair dheonach"] },
+  { id: "eagru",       emoji: "📋", lipéad: "Imeachtaí a eagrú",              béarla: "Organising events",         cur: "Spéis acu imeachtaí a eagrú nó a chomheagrú.", curEn: "Interested in organising or co-organising events.", meaitseail: ["Imeachtaí a eagrú"] },
+  { id: "taighde",     emoji: "🧪", lipéad: "Rannpháirtíocht taighde",         béarla: "Research participation",          cur: "Spéis acu páirt a ghlacadh i staidéir taighde: suirbhéanna, turgnaimh nó taifeadtaí gutha.", curEn: "Interested in taking part in research studies: surveys, experiments or voice recordings.", meaitseail: ["staidéar taighde", "staidéir taighde"] },
+  { id: "cuairteanna", emoji: "🏢", lipéad: "Cuairteanna ar shaotharlann",    béarla: "Lab visits",                cur: "Spéis acu cuairteanna ar a saotharlann nó ar a ngrúpa taighde a óstáil.", curEn: "Interested in hosting visits to their lab or research group.", meaitseail: ["Cuairteanna ar"] },
+  { id: "comhoibriu",  emoji: "🤝", lipéad: "Comhoibriú",                     béarla: "Collaboration",             cur: "Spéis acu comhoibriú ar thaighde nó ar thionscadail trí Ghaeilge.", curEn: "Interested in collaborating on research or projects through Irish.", meaitseail: ["Comhoibriú"] },
   { id: "foghlaim",    emoji: "🌱", lipéad: "Imeachtaí d'fhoghlaimeoirí",     béarla: "Learners' events",          cur: "Spéis acu in imeachtaí d'fhoghlaimeoirí, m.sh. seisiúin téarmaíochta nó ciorcail chomhrá.", curEn: "Interested in events for learners, e.g. terminology sessions or conversation groups.", meaitseail: ["fhoghlaimeoirí"] },
-  { id: "teagasc",     emoji: "🎓", lipéad: "Teagasc trí Ghaeilge",           béarla: "Teaching through Irish",    cur: "Ag teagasc nó ag déanamh maoirseachta trí Ghaeilge cheana, nó sásta é sin a dhéanamh le tacaíocht.", curEn: "Already teaching or supervising through Irish, or willing to with support.", meaitseail: [] }
+  { id: "triu",        emoji: "📣", lipéad: "Oideachas tríú leibhéal trí Ghaeilge", béarla: "Irish-medium third level", cur: "Spéis acu oideachas tríú leibhéal trí mheán na Gaeilge a chur chun cinn, m.sh. trí ghrúpaí oibre, comhairliúcháin nó feachtais.", curEn: "Interested in promoting Irish-medium third-level education, e.g. through working groups, consultations or campaigns.", meaitseail: ["trí mheán na Gaeilge a chur chun cinn", "tríú-leibhéal trí mheán", "tríú leibhéal trí mheán"] },
+  { id: "teagasc",     emoji: "🎓", lipéad: "Teagasc trí Ghaeilge",           béarla: "Teaching through Irish",    cur: "Spéis acu teagasc nó maoirseacht a dhéanamh trí Ghaeilge, leis na hacmhainní cuí.", curEn: "Interested in teaching or supervising through Irish, with the appropriate resources.", meaitseail: [] }
 ];
 
 /* ===================================================================== */
