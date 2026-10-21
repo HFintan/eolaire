@@ -145,18 +145,23 @@
   #eochair-liosta .cur { font-size: .9rem; }
   #eochair-liosta .curEn { font-size: .85rem; color: var(--téacs-lag); }
 
-  .failte .en { font-style: italic; }
+  .en, .béarla, .fo-theideal, .curEn { font-style: italic; }
+  .fo-theideal.ga-fo { font-style: normal; color: var(--téacs); margin-bottom: .25rem !important; }
+  .go-luath { font-style: normal !important; }
   .ranna { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .75rem; margin: 0 0 2rem; }
   .rann { display: block; text-decoration: none; color: var(--téacs); border: 1px solid var(--imeall); border-top: 3px solid var(--príomh); border-radius: var(--cruinn); padding: .8rem 1rem; }
   .rann:hover { background: var(--éadrom); }
   .rann strong { display: block; font-family: var(--cló-ceannteidil); color: var(--príomh); font-size: 1rem; line-height: 1.35; }
   .rann .béarla { display: block; font-size: .85rem; color: var(--téacs-lag); margin-top: .2rem; }
-  .claraigh-rann { display: inline-block; margin: 0 0 1.25rem; font-weight: 600; }
+  .claraigh-rann { display: inline-block; margin: 0 0 1.5rem; font-weight: 600; background: var(--príomh); color: #fff; text-decoration: none; padding: .65rem 1.4rem; border-radius: 999px; }
+  .claraigh-rann:hover { background: var(--príomh-dorcha); }
+  .claraigh-rann .en { color: #dff3ee; font-weight: 400; }
   .go-luath { color: var(--téacs-lag); font-style: italic; }
   section.liosta + section.liosta { margin-top: 3rem; }
   .eochair .noda { margin: .75rem 0 0; font-size: .9rem; }
   .eochair .noda .en { color: var(--téacs-lag); font-style: italic; }
 
+  .carta.aibhsithe { box-shadow: 0 0 0 3px var(--béim); }
   footer { border-top: 1px solid var(--imeall); padding: 1.5rem 0 2.5rem; font-size: .9rem; color: var(--téacs-lag); }
   footer p { margin: .25rem 0; }
 </style>
@@ -166,7 +171,7 @@
 <header class="barr">
   <div class="lár">
     <h1>An tEolaíre</h1>
-    <p>Eolaire poiblí de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
+    <p>Daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
   </div>
 </header>
 <nav class="roghchlar">
@@ -180,12 +185,14 @@
 
     <section class="failte" aria-label="Fáilte">
       <div class="ga">
-        <p>Fáilte chuig an Eolaíre! Is liosta é seo de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM.</p>
-        <p>Úsáid an cuardach agus na scagairí thíos chun daoine a aimsiú de réir réimse nó spéise. Mura bhfuil seoladh ríomhphoist ar taispeáint do dhuine, seol ríomhphost chugainn agus cuirfimid do theachtaireacht ar aghaidh. Tá fáilte roimh chách clárú, is cuma cén leibhéal Gaeilge atá agat.</p>
+        <p>Fáilte chuig an Eolaíre! Is liosta é seo de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
+        <p>Is féidir an cuardach agus na scagairí thíos a úsáid chun daoine a aimsiú de réir réimse nó spéise. Tá fáilte roimh chách clárú, is cuma cén leibhéal Gaeilge atá agat.</p>
+        <p>Ní gá duit a bheith luaite ar an liosta poiblí: coinnítear bunachar príobháideach freisin chun daoine a chur ar an eolas faoi imeachtaí agus deiseanna. Is leor an fhoirm a líonadh agus "Nílim" a roghnú sa cheist faoin Eolaíre poiblí. Más mian leat a bheith luaite san Eolaíre poiblí amach anseo, ní gá ach ríomhphost a chur chuig stemasgaeilge[ag]gmail[ponc]com agus cuirfear leis thú.</p>
       </div>
       <div class="en">
-        <p>Welcome to the Eolaíre! This is a list of people with an interest in Irish and in STEM.</p>
-        <p>Use the search and filters below to find people by field or interest. If someone's email isn't shown, email us and we'll pass your message on. Everyone is welcome to sign up, whatever their level of Irish.</p>
+        <p>Welcome to the Eolaíre! This is a list of people with an interest in Irish and in STEM or related fields.</p>
+        <p>You can use the search and filters below to find people by field or interest. Everyone is welcome to sign up, whatever their level of Irish.</p>
+        <p>You don't have to be listed publicly: a private database is also kept to let people know about events and opportunities. Just fill in the form and choose "Nílim" in the question about the public Eolaíre. If you'd like to be listed in the public Eolaíre in future, simply email stemasgaeilge[at]gmail[dot]com and you'll be added.</p>
       </div>
     </section>
 
@@ -198,9 +205,9 @@
         <strong>Mic léinn</strong>
         <span class="béarla">Students</span>
       </a>
-      <a class="rann" href="#daoine-eile">
-        <strong>Daoine eile</strong>
-        <span class="béarla">Others</span>
+      <a class="rann" href="#lasmuigh">
+        <strong>Daoine lasmuigh den tríú-leibhéal</strong>
+        <span class="béarla">People beyond third level</span>
       </a>
     </nav>
 
@@ -213,7 +220,7 @@
     <section class="liosta" id="leachtoiri">
       <h2>Léachtóirí, taighdeoirí agus foireann tríú leibhéal eile</h2>
       <p class="fo-theideal">Lecturers, researchers and other third-level staff</p>
-      <a class="claraigh-rann" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh sa liosta seo [Sign up to this list] →</a>
+      <a class="claraigh-rann" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh <span class="en">[Sign up]</span></a>
 
       <div class="scagairi">
         <div class="ro">
@@ -234,14 +241,15 @@
 
     <section class="liosta" id="mic-leinn">
       <h2>Mic léinn</h2>
-      <p class="fo-theideal">Students (undergraduate and taught master's)</p>
-      <p class="go-luath">Ag teacht go luath. [Coming soon.]</p>
+      <p class="fo-theideal">Students</p>
+      <p class="go-luath">Ag teacht go luath. <span class="en">[Coming soon.]</span></p>
     </section>
 
-    <section class="liosta" id="daoine-eile">
-      <h2>Daoine eile</h2>
-      <p class="fo-theideal">Others: industry, teachers, public sector, science communication and more</p>
-      <p class="go-luath">Ag teacht go luath. [Coming soon.]</p>
+    <section class="liosta" id="lasmuigh">
+      <h2>Daoine lasmuigh den tríú-leibhéal</h2>
+      <p class="fo-theideal ga-fo">Tionscal, múinteoirí, an earnáil phoiblí, cumarsáid eolaíochta agus eile</p>
+      <p class="fo-theideal">People beyond third level: industry, teachers, public sector, science communication and more</p>
+      <p class="go-luath">Ag teacht go luath. <span class="en">[Coming soon.]</span></p>
     </section>
 
   </div>
@@ -249,9 +257,9 @@
 
 <footer>
   <div class="lár">
-    <p>Coimeádann <span>[D'ainm]</span> an tEolaíre. [Maintained by <span>[Your name]</span>.]</p>
-    <p><a href="priobhaideacht.html">Fógra príobháideachais [Privacy notice]</a></p>
-    <p>Chun do shonraí a athrú nó a bhaint: <span>[seoladh ríomhphoist]</span></p>
+    <p>Coimeádann <a href="#duine-fintan-hegarty" class="nasc-coimeadai">an Dr Fintan Hegarty</a> an tEolaíre. <span class="en">[Maintained by Dr Fintan Hegarty.]</span></p>
+    <p><a href="priobhaideacht.html">Fógra príobháideachais</a> <span class="en">[Privacy notice]</span></p>
+    <p>Chun do shonraí a athrú nó a bhaint <span class="en">[To change or remove your details]</span>: stemasgaeilge[ag]gmail[ponc]com</p>
   </div>
 </footer>
 
@@ -262,7 +270,7 @@
    (File → Share → Publish to web → CSV) anseo. Go dtí sin, úsáidtear
    na samplaí thíos.
    ===================================================================== */
-const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXIMr-ArARb3GyDxljjQTSY0b4ah3QCEpbiY_v5qpzGPB5S1pp0Lzbb0BbtakhhFVUoNsk9UqNnxri/pub?gid=0&single=true&output=csv";
+const CSV_URL = "";
 
 /* Na colúin a bheidh sa bhileog phoiblí (ró ceannteidil):
    ainm, institiuid, rol, reimsi, giota, speiseanna, teagasc, maoirseacht, riomhphost, nasc */
@@ -317,11 +325,11 @@ const REIMSI = [
 const DEILBHINI = [
   { id: "cainteanna",  emoji: "💬", lipéad: "Cainteanna neamhfhoirmeálta",  béarla: "Informal talks",            cur: "Spéis acu cainteanna neamhfhoirmeálta nó ceardlanna a thabhairt, m.sh. ag Pint of Science, ar chuairteanna scoile nó ag léachtaí le linn lóin.", curEn: "Interested in giving informal talks or workshops, e.g. at Pint of Science, on school visits or at lunchtime talks.", meaitseail: ["Cainteanna neamhfhoirm"] },
   { id: "seimineair",  emoji: "🎤", lipéad: "Seimineáir nó painéil",          béarla: "Seminars or panels",        cur: "Spéis acu seimineár a thabhairt nó páirt a ghlacadh i bpléphainéal.", curEn: "Interested in giving a seminar or taking part in a panel discussion.", meaitseail: ["Seimineáir"] },
-  { id: "meain",       emoji: "📻", lipéad: "Na meáin",                       béarla: "Media",                     cur: "Spéis acu agallaimh a dhéanamh leis na meáin: raidió, teilifís nó podchraoltaí.", curEn: "Interested in doing media interviews: radio, TV or podcasts.", meaitseail: ["Agallaimh"] },
+  { id: "meain",       emoji: "📻", lipéad: "Na meáin",                       béarla: "Media",                     cur: "Spéis acu agallaimh a dhéanamh leis na meáin: m.sh. raidió, teilifís nó podchraoltaí.", curEn: "Interested in doing media interviews: e.g. radio, TV or podcasts.", meaitseail: ["Agallaimh"] },
   { id: "acmhainni",   emoji: "✏️", lipéad: "Acmhainní",                      béarla: "Resources",                 cur: "Spéis acu acmhainní a chruthú nó a athbhreithniú, m.sh. físeáin, ailt nó téarmaíocht.", curEn: "Interested in creating or reviewing resources, e.g. videos, articles or terminology.", meaitseail: ["Acmhainní"] },
   { id: "deonach",     emoji: "🙋", lipéad: "Obair dheonach",                 béarla: "Volunteering",              cur: "Spéis acu cabhrú mar oibrithe deonacha ag imeachtaí ar an lá.", curEn: "Interested in volunteering at events on the day.", meaitseail: ["Obair dheonach"] },
   { id: "eagru",       emoji: "📋", lipéad: "Imeachtaí a eagrú",              béarla: "Organising events",         cur: "Spéis acu imeachtaí a eagrú nó a chomheagrú.", curEn: "Interested in organising or co-organising events.", meaitseail: ["Imeachtaí a eagrú"] },
-  { id: "taighde",     emoji: "🧪", lipéad: "Rannpháirtíocht taighde",         béarla: "Research participation",          cur: "Spéis acu páirt a ghlacadh i staidéir taighde: suirbhéanna, turgnaimh nó taifeadtaí gutha.", curEn: "Interested in taking part in research studies: surveys, experiments or voice recordings.", meaitseail: ["staidéar taighde", "staidéir taighde"] },
+  { id: "taighde",     emoji: "🧪", lipéad: "Rannpháirtíocht taighde",         béarla: "Research participation",          cur: "Spéis acu páirt a ghlacadh i staidéir taighde: m.sh. suirbhéanna, turgnaimh nó taifeadtaí gutha.", curEn: "Interested in taking part in research studies: e.g. surveys, experiments or voice recordings.", meaitseail: ["staidéar taighde", "staidéir taighde"] },
   { id: "cuairteanna", emoji: "🏢", lipéad: "Cuairteanna ar shaotharlann",    béarla: "Lab visits",                cur: "Spéis acu cuairteanna ar a saotharlann nó ar a ngrúpa taighde a óstáil.", curEn: "Interested in hosting visits to their lab or research group.", meaitseail: ["Cuairteanna ar"] },
   { id: "comhoibriu",  emoji: "🤝", lipéad: "Comhoibriú",                     béarla: "Collaboration",             cur: "Spéis acu comhoibriú ar thaighde nó ar thionscadail trí Ghaeilge.", curEn: "Interested in collaborating on research or projects through Irish.", meaitseail: ["Comhoibriú"] },
   { id: "foghlaim",    emoji: "🌱", lipéad: "Imeachtaí d'fhoghlaimeoirí",     béarla: "Learners' events",          cur: "Spéis acu in imeachtaí d'fhoghlaimeoirí, m.sh. seisiúin téarmaíochta nó ciorcail chomhrá.", curEn: "Interested in events for learners, e.g. terminology sessions or conversation groups.", meaitseail: ["fhoghlaimeoirí"] },
@@ -392,7 +400,7 @@ function el(clib, airíonna = {}, téacs) {
 }
 
 function cartaDuine(d) {
-  const c = el("article", { class: "carta" });
+  const c = el("article", { class: "carta", id: "duine-" + slug(eochairShórtála(d.ainm)) });
 
   /* Ceann: ainm, ról · institiúid ar chlé; deilbhíní ar dheis */
   const ceann = el("div", { class: "ceann" });
@@ -452,6 +460,9 @@ function cartaDuine(d) {
   }
   return c;
 }
+
+/* Aitheantóir don chárta, m.sh. "fintan-hegarty" */
+function slug(s) { return normalú(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
 
 /* Eochair shórtála: ainm gan teideal (An Dr, An tOllamh, Dr, Prof, srl.) */
 function eochairShórtála(ainm) {
@@ -529,7 +540,17 @@ async function tosaigh() {
   daoine = amh.filter(d => d.ainm).map(ullmhaigh)
               .sort((a, b) => eochairShórtála(a.ainm).localeCompare(eochairShórtála(b.ainm), "ga", { sensitivity: "base" }));
   nuashonraigh();
+  /* Má tá #duine-... sa nasc, scrollaigh chuig an gcárta sin agus aibhsigh é */
+  const sprioc = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (sprioc) { sprioc.scrollIntoView({ block: "center" }); sprioc.classList.add("aibhsithe"); }
 }
+window.addEventListener("hashchange", () => {
+  const sprioc = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (sprioc && sprioc.classList.contains("carta")) {
+    document.querySelectorAll(".aibhsithe").forEach(x => x.classList.remove("aibhsithe"));
+    sprioc.scrollIntoView({ block: "center" }); sprioc.classList.add("aibhsithe");
+  }
+});
 tosaigh();
 </script>
 </body>
