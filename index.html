@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>An tEolaíre | STEM as Gaeilge</title>
-<meta name="description" content="Eolaire poiblí de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM.">
+<meta name="description" content="Daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
@@ -63,15 +63,8 @@
   }
   .cnaipe-claraigh:hover { box-shadow: 0 0 0 4px rgba(255,255,255,.3); }
 
-  nav.roghchlar {
-    background: var(--príomh-dorcha); text-align: center;
-    padding: .85rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,.12);
-  }
-  nav.roghchlar a {
-    color: #fff; text-decoration: none; text-transform: uppercase;
-    font-size: .85rem; font-weight: 500; letter-spacing: .06em; margin: 0 1rem;
-  }
-  nav.roghchlar a:hover { text-decoration: underline; }
+  .ar-ais { position: absolute; top: .9rem; left: 1rem; z-index: 1; color: #dff3ee; text-decoration: none; font-size: .9rem; }
+  .ar-ais:hover, .ar-ais:focus-visible { color: #fff; text-decoration: underline; }
 
   .lár { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
 
@@ -149,8 +142,10 @@
   .fo-theideal.ga-fo { font-style: normal; color: var(--téacs); margin-bottom: .25rem !important; }
   .go-luath { font-style: normal !important; }
   .ranna { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .75rem; margin: 0 0 2rem; }
-  .rann { display: block; text-decoration: none; color: var(--téacs); border: 1px solid var(--imeall); border-top: 3px solid var(--príomh); border-radius: var(--cruinn); padding: .8rem 1rem; }
-  .rann:hover { background: var(--éadrom); }
+  .rann { display: flex; flex-direction: column; justify-content: space-between; gap: .75rem; border: 1px solid var(--imeall); border-top: 3px solid var(--príomh); border-radius: var(--cruinn); padding: .8rem 1rem; }
+  .rann .chuig { text-decoration: none; color: var(--téacs); }
+  .rann .chuig:hover strong { text-decoration: underline; }
+  .rann .claraigh-rann { margin: 0; align-self: flex-start; padding: .4rem 1.1rem; font-size: .9rem; }
   .rann strong { display: block; font-family: var(--cló-ceannteidil); color: var(--príomh); font-size: 1rem; line-height: 1.35; }
   .rann .béarla { display: block; font-size: .85rem; color: var(--téacs-lag); margin-top: .2rem; }
   .claraigh-rann { display: inline-block; margin: 0 0 1.5rem; font-weight: 600; background: var(--príomh); color: #fff; text-decoration: none; padding: .65rem 1.4rem; border-radius: 999px; }
@@ -171,19 +166,39 @@
 <body>
 
 <header class="barr">
+  <a class="ar-ais" href="https://etim.ie">← etim.ie</a>
   <div class="lár">
     <h1>An tEolaíre</h1>
     <p>Daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
   </div>
 </header>
-<nav class="roghchlar">
-  <a href="https://etim.ie">STEM as Gaeilge</a>
-  <a href="https://etim.ie/etimiri">ETIMirí</a>
-  <a href="https://etim.ie/comortas">Comórtas</a>
-</nav>
 
 <main>
   <div class="lár">
+
+    <nav class="ranna" aria-label="Na liostaí">
+      <div class="rann">
+        <a class="chuig" href="#leachtoiri">
+          <strong>Léachtóirí, taighdeoirí, PhDs agus foireann tríú leibhéal eile</strong>
+          <span class="béarla">Lecturers, researchers, PhDs and other third-level staff</span>
+        </a>
+        <a class="claraigh-rann" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh</a>
+      </div>
+      <div class="rann">
+        <a class="chuig" href="#mic-leinn">
+          <strong>Mic léinn</strong>
+          <span class="béarla">Students</span>
+        </a>
+        <a class="claraigh-rann" href="https://forms.gle/XFySiS4kkfKDkyS17">Cláraigh</a>
+      </div>
+      <div class="rann">
+        <a class="chuig" href="#lasmuigh">
+          <strong>Daoine lasmuigh den tríú-leibhéal</strong>
+          <span class="béarla">People outside third-level education</span>
+        </a>
+        <a class="claraigh-rann" href="https://forms.gle/FV6sFJasfsUkHwkd6">Cláraigh</a>
+      </div>
+    </nav>
 
     <section class="failte" aria-label="Fáilte">
       <div class="ga">
@@ -199,21 +214,6 @@
         <p><strong>A note on AI:</strong> AI tools were used to help build this page (HTML code and spreadsheet formulas), but we will never put your personal data through AI tools.</p>
       </div>
     </section>
-
-    <nav class="ranna" aria-label="Na liostaí">
-      <a class="rann" href="#leachtoiri">
-        <strong>Léachtóirí, taighdeoirí, scoláirí PhD, agus foireann tríú leibhéal eile</strong>
-        <span class="béarla">Lecturers, researchers, PhD students, and other third-level staff</span>
-      </a>
-      <a class="rann" href="#mic-leinn">
-        <strong>Mic léinn</strong>
-        <span class="béarla">Students</span>
-      </a>
-      <a class="rann" href="#lasmuigh">
-        <strong>Daoine lasmuigh den tríú-leibhéal</strong>
-        <span class="béarla">People outside third-level education</span>
-      </a>
-    </nav>
 
     <details class="eochair" open>
       <summary>Eochair na ndeilbhíní <span class="béarla">[Icon key]</span></summary>
@@ -238,9 +238,9 @@
     </section>
 
     <section class="liosta" id="leachtoiri">
-      <h2>Léachtóirí, taighdeoirí, scoláirí PhD, agus foireann tríú leibhéal eile</h2>
-      <p class="fo-theideal">Lecturers, researchers, PhD students, and other third-level staff</p>
-      <a class="claraigh-rann" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh <span class="en">[Sign up]</span></a>
+      <h2>Léachtóirí, taighdeoirí agus foireann tríú leibhéal eile</h2>
+      <p class="fo-theideal">Lecturers, researchers and other third-level staff</p>
+      <a class="claraigh-rann" href="https://forms.gle/7Xe7nzLcsBMsMtRu7">Cláraigh</a>
       <p class="lion-rann" id="lion-leachtoiri"></p>
       <div class="eangach" id="eangach-leachtoiri"></div>
     </section>
@@ -248,7 +248,7 @@
     <section class="liosta" id="mic-leinn">
       <h2>Mic léinn</h2>
       <p class="fo-theideal">Students</p>
-      <a class="claraigh-rann" href="https://forms.gle/XFySiS4kkfKDkyS17">Cláraigh <span class="en">[Sign up]</span></a>
+      <a class="claraigh-rann" href="https://forms.gle/XFySiS4kkfKDkyS17">Cláraigh</a>
       <p class="lion-rann" id="lion-mic-leinn"></p>
       <div class="eangach" id="eangach-mic-leinn"></div>
     </section>
@@ -257,7 +257,7 @@
       <h2>Daoine lasmuigh den tríú-leibhéal</h2>
       <p class="fo-theideal ga-fo">Tionscal, múinteoirí, an earnáil phoiblí, cumarsáid eolaíochta agus eile</p>
       <p class="fo-theideal">People outside third-level education: industry, teachers, public sector, science communication and more</p>
-      <a class="claraigh-rann" href="https://forms.gle/FV6sFJasfsUkHwkd6">Cláraigh <span class="en">[Sign up]</span></a>
+      <a class="claraigh-rann" href="https://forms.gle/FV6sFJasfsUkHwkd6">Cláraigh</a>
       <p class="lion-rann" id="lion-lasmuigh"></p>
       <div class="eangach" id="eangach-lasmuigh"></div>
     </section>
@@ -269,7 +269,7 @@
   <div class="lár">
     <p>Coimeádann <a href="#duine-fintan-hegarty" class="nasc-coimeadai">an Dr Fintan Hegarty</a> an tEolaíre. <span class="en">[Maintained by Dr Fintan Hegarty.]</span></p>
     <p><a href="priobhaideacht.html">Fógra príobháideachais</a> <span class="en">[Privacy notice]</span></p>
-        <p>Níl an tEolaíre freagrach as ábhar na suíomhanna gréasáin a nascann daoine lena n-iontrálacha. Má fheiceann tú fadhb ar bith le hiontráil nó le nasc, cuir ríomhphost chuig stemasgaeilge[ag]gmail[ponc]com. Coimeádaimid an ceart iontráil nó nasc a dhiúltú nó a bhaint. <span class="en">[The Eolaíre is not responsible for the content of websites people link to in their entries. If you see any problem with an entry or a link, please email stemasgaeilge[at]gmail[dot]com. We reserve the right to decline or remove an entry or link.]</span></p>
+    <p>Níl an tEolaíre freagrach as ábhar na suíomhanna gréasáin a nascann daoine lena n-iontrálacha. Má fheiceann tú fadhb ar bith le hiontráil nó le nasc, cuir ríomhphost chuig stemasgaeilge[ag]gmail[ponc]com. Coimeádaimid an ceart iontráil nó nasc a dhiúltú nó a bhaint. <span class="en">[The Eolaíre is not responsible for the content of websites people link to in their entries. If you see any problem with an entry or a link, please email stemasgaeilge[at]gmail[dot]com. We reserve the right to decline or remove an entry or link.]</span></p>
     <p>Chun do shonraí a athrú nó a bhaint <span class="en">[To change or remove your details]</span>: stemasgaeilge[ag]gmail[ponc]com</p>
   </div>
 </footer>
@@ -322,6 +322,7 @@ const REIMSI = [
   "Cumarsáid Eolaíochta agus na Meáin",
   "Eolaíocht Chomhshaoil agus Mhuirí",
   "Fisic",
+  "Géanómaíocht agus Bithfhaisnéisíocht",
   "Inbhuanaitheacht",
   "Innealtóireacht",
   "Intleacht Shaorga agus Teicneolaíocht Teanga",
@@ -344,6 +345,7 @@ const REIMSI_EN = {
   "Cumarsáid Eolaíochta agus na Meáin": "Science Communication and Media",
   "Eolaíocht Chomhshaoil agus Mhuirí": "Environmental and Marine Science",
   "Fisic": "Physics",
+  "Géanómaíocht agus Bithfhaisnéisíocht": "Genomics and Bioinformatics",
   "Inbhuanaitheacht": "Sustainability",
   "Innealtóireacht": "Engineering",
   "Intleacht Shaorga agus Teicneolaíocht Teanga": "AI and Language Technology",
