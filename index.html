@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>An tEolaíre | STEM as Gaeilge</title>
 <meta name="description" content="Daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eolaire.etim.ie/">
+<meta property="og:title" content="An tEolaíre">
+<meta property="og:description" content="Daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara. [People with an interest in Irish and in STEM or related fields.]">
+<meta property="og:image" content="https://eolaire.etim.ie/reamhamharc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
@@ -56,14 +66,14 @@
     font-size: clamp(2.4rem, 6vw, 3.6rem); margin: 0 0 .5rem; line-height: 1.1;
   }
   header.barr h1 em { font-style: italic; color: #cdeee6; }
-  header.barr p { margin: 0 auto 1.5rem; max-width: 34rem; color: #dff3ee; }
+  header.barr p { margin: 0 auto 1.5rem; max-width: 48rem; color: #dff3ee; }
   .cnaipe-claraigh {
     display: inline-block; background: #fff; color: var(--príomh);
     font-weight: 600; padding: .6rem 1.3rem; border-radius: 999px; text-decoration: none;
   }
   .cnaipe-claraigh:hover { box-shadow: 0 0 0 4px rgba(255,255,255,.3); }
 
-  .ar-ais { position: absolute; top: .9rem; left: 1rem; z-index: 1; color: #dff3ee; text-decoration: none; font-size: .9rem; }
+  .ar-ais { position: absolute; top: -2.6rem; left: 1rem; z-index: 1; color: #dff3ee; text-decoration: none; font-size: .9rem; }
   .ar-ais:hover, .ar-ais:focus-visible { color: #fff; text-decoration: underline; }
 
   .lár { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
@@ -125,9 +135,13 @@
   .folamh { text-align: center; color: var(--téacs-lag); padding: 2rem 1rem; }
 
   /* Fáilte agus eochair */
-  .failte { margin: 0 0 2rem; max-width: 52rem; }
+  .failte { margin: 0 0 2rem; }
   .failte p { margin: 0 0 .75rem; }
-  .failte .en { color: var(--téacs-lag); font-size: .95rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--imeall); }
+  .failte .en { color: var(--téacs-lag); }
+  .failte .nota-is { font-size: .9rem; color: var(--téacs-lag); }
+  .teanga { float: right; margin: 0 0 .5rem 1rem; font: inherit; font-size: .85rem; background: #fff; color: var(--príomh); border: 1px solid var(--príomh); border-radius: 999px; padding: .2rem .8rem; cursor: pointer; }
+  .teanga:hover { background: var(--éadrom); }
+  .rann .chuig.gan-liosta { pointer-events: none; }
   .eochair { border: 1px solid var(--imeall); border-radius: var(--cruinn); padding: .9rem 1.2rem; margin: 0 0 2.5rem; }
   .eochair summary { cursor: pointer; font-family: var(--cló-ceannteidil); font-weight: 700; color: var(--príomh); font-size: 1.1rem; }
   .eochair summary .béarla { font-family: var(--cló); font-weight: 400; font-size: .9rem; color: var(--téacs-lag); }
@@ -166,8 +180,8 @@
 <body>
 
 <header class="barr">
-  <a class="ar-ais" href="https://etim.ie">← etim.ie</a>
   <div class="lár">
+    <a class="ar-ais" href="https://etim.ie">← etim.ie</a>
     <h1>An tEolaíre</h1>
     <p>Daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
   </div>
@@ -201,21 +215,20 @@
     </nav>
 
     <section class="failte" aria-label="Fáilte">
-      <div class="ga">
-        <p>Fáilte chuig an Eolaíre! Is liosta é seo de dhaoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara.</p>
-        <p>Is féidir an cuardach agus na scagairí thíos a úsáid chun daoine a aimsiú de réir réimse nó spéise. Tá fáilte roimh chách clárú, is cuma cén leibhéal Gaeilge atá agat.</p>
-        <p>Ní gá duit a bheith luaite ar an liosta poiblí: coinnítear bunachar príobháideach freisin chun daoine a chur ar an eolas faoi imeachtaí agus deiseanna. Is leor an fhoirm a líonadh agus "Nílim" a roghnú sa cheist faoin Eolaíre poiblí. Más mian leat a bheith luaite san Eolaíre poiblí amach anseo, ní gá ach ríomhphost a chur chuig stemasgaeilge[ag]gmail[ponc]com agus cuirfear leis thú.</p>
-        <p><strong>Nóta faoin IS:</strong> Úsáideadh uirlisí intleachta shaorga chun cabhrú leis an leathanach seo a thógáil (cód HTML agus foirmlí scarbhileoige), ach ní chuirfimid do shonraí pearsanta trí uirlisí intleachta shaorga riamh.</p>
+      <button type="button" class="teanga" id="teanga" lang="en" aria-controls="failte-ga failte-en">English</button>
+      <div class="ga" id="failte-ga" lang="ga">
+        <p>Fáilte chuig an Eolaíre — liosta daoine a bhfuil spéis acu sa Ghaeilge agus i réimsí STEM nó in ábhair ghaolmhara. Tá fáilte roimh chách, is cuma cén leibhéal Gaeilge atá agat.</p>
+        <p>Ní gá a bheith luaite go poiblí: coinnítear bunachar príobháideach freisin chun daoine a chur ar an eolas faoi imeachtaí agus deiseanna. Is féidir do rogha a léiriú san fhoirm.</p>
+        <p class="nota-is"><strong>Nóta faoin IS:</strong> Úsáideadh uirlisí intleachta shaorga chun cabhrú leis an leathanach seo a thógáil (cód HTML agus foirmlí scarbhileoige), ach ní chuirfimid do shonraí pearsanta trí uirlisí intleachta shaorga riamh.</p>
       </div>
-      <div class="en">
-        <p>Welcome to the Eolaíre! This is a list of people with an interest in Irish and in STEM or related fields.</p>
-        <p>You can use the search and filters below to find people by field or interest. Everyone is welcome to sign up, whatever their level of Irish.</p>
-        <p>You don't have to be listed publicly: a private database is also kept to let people know about events and opportunities. Just fill in the form and choose "Nílim" in the question about the public Eolaíre. If you'd like to be listed in the public Eolaíre in future, simply email stemasgaeilge[at]gmail[dot]com and you'll be added.</p>
-        <p><strong>A note on AI:</strong> AI tools were used to help build this page (HTML code and spreadsheet formulas), but we will never put your personal data through AI tools.</p>
+      <div class="en" id="failte-en" lang="en" hidden>
+        <p>Welcome to the Eolaíre — a list of people with an interest in Irish and in STEM or related fields. Everyone is welcome, whatever their level of Irish.</p>
+        <p>You don't have to be listed publicly: a private database is also kept to let people know about events and opportunities. You can choose on the form.</p>
+        <p class="nota-is"><strong>A note on AI:</strong> AI tools were used to help build this page (HTML code and spreadsheet formulas), but we will never put your personal data through AI tools.</p>
       </div>
     </section>
 
-    <details class="eochair" open>
+    <details class="eochair">
       <summary>Eochair na ndeilbhíní <span class="béarla">[Icon key]</span></summary>
       <p class="noda">Léiríonn na deilbhíní na rudaí a bhfuil spéis ag duine iontu, ní gealltanas! <span class="en">[The icons show what someone is interested in, not a commitment!]</span></p>
       <ul id="eochair-liosta"></ul>
@@ -523,6 +536,11 @@ function nuashonraigh() {
     const eangach = document.getElementById("eangach-" + rann.id);
     const lionRann = document.getElementById("lion-" + rann.id);
     const sa_rann = daoine.filter(d => d.rann === rann.id);
+    /* Folaigh rann folamh (ach fág an bosca agus an cnaipe Cláraigh ag an mbarr) */
+    const folamh = lódáilte && !sa_rann.length && !teipthe.has(rann.id);
+    document.getElementById(rann.id).hidden = folamh;
+    const chuig = document.querySelector(`.rann .chuig[href="#${rann.id}"]`);
+    if (chuig) chuig.classList.toggle("gan-liosta", folamh);
     const toradh = sa_rann.filter(d =>
       (!q || d.cuardach.includes(q)) &&
       (!r || d.reimsi.includes(r)) &&
@@ -534,7 +552,7 @@ function nuashonraigh() {
       eangach.append(el("p", { class: "folamh" }, "Níorbh fhéidir an liosta seo a lódáil. Bain triail eile as ar ball."));
       lionRann.textContent = "";
     } else if (!sa_rann.length) {
-      eangach.append(el("p", { class: "folamh" }, "Níl aon duine liostaithe anseo fós. [No one listed here yet.]"));
+      eangach.append(el("p", { class: "folamh" }, "Níl aon duine liostaithe anseo fós — bí ar an gcéad duine! [No one listed here yet — be the first!]"));
       lionRann.textContent = "";
     } else {
       if (!toradh.length) eangach.append(el("p", { class: "folamh" }, "Níor aimsíodh aon duine sa liosta seo. Bain triail as scagairí eile."));
@@ -612,6 +630,14 @@ window.addEventListener("hashchange", () => {
     document.querySelectorAll(".aibhsithe").forEach(x => x.classList.remove("aibhsithe"));
     sprioc.scrollIntoView({ block: "center" }); sprioc.classList.add("aibhsithe");
   }
+});
+/* Athraigh téacs na fáilte idir Gaeilge agus Béarla */
+document.getElementById("teanga").addEventListener("click", e => {
+  const ga = document.getElementById("failte-ga"), en = document.getElementById("failte-en");
+  const béarla = ga.hidden === false;
+  ga.hidden = béarla; en.hidden = !béarla;
+  e.currentTarget.textContent = béarla ? "Gaeilge" : "English";
+  e.currentTarget.lang = béarla ? "ga" : "en";
 });
 tosaigh();
 </script>
